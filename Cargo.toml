@@ -1,0 +1,22 @@
+[package]
+name = "rust-polars-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7.5"
+polars = { version = "0.42.0", features = ["lazy", "csv", "json", "parquet", "strings", "regex", "cov", "serde"] }
+serde = { version = "1.0.204", features = ["derive"] }
+serde_json = "1.0.120"
+tokio = { version = "1.39.2", features = ["full"] }
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0
+
+[profile.release]
+panic = 'abort'
